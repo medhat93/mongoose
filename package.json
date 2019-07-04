@@ -30,7 +30,8 @@
     "ms": "0.7.2",
     "muri": "1.2.1",
     "regexp-clone": "0.0.1",
-    "sliced": "1.0.1"
+    "sliced": "1.0.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "acquit": "0.4.1",
@@ -73,7 +74,9 @@
     "install-browser": "npm install `node format_deps.js`",
     "lint": "eslint . --quiet",
     "test": "mocha test/*.test.js test/**/*.test.js",
-    "test-cov": "istanbul cover --report text --report html _mocha test/*.test.js"
+    "test-cov": "istanbul cover --report text --report html _mocha test/*.test.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "main": "./index.js",
   "engines": {
@@ -88,5 +91,6 @@
     "url": "git://github.com/Automattic/mongoose.git"
   },
   "homepage": "http://mongoosejs.com",
-  "browser": "lib/browser.js"
+  "browser": "lib/browser.js",
+  "snyk": true
 }
